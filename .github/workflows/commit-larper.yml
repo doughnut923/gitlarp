@@ -24,9 +24,16 @@ jobs:
           sleep "$SLEEP"
       - name: Make a fake commit
         run: |
-          echo "$(date -u)" >> activity.log
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
+          MESSAGE="$(shuf -n 1 commit-messages.txt)"
+          if [ ! -f activity.log ] || [ "$((RANDOM % 10))" -lt 3 ]; then
+            echo "$(date -u)" >> activity.log
+            echo "→ added line"
+          else
+            sed -i '1d' activity.log
+            echo "→ removed first line"
+          fi
           git add .
-          git commit -m "$(shuf -n 1 commit-messages.txt)"
+          git commit -m "$MESSAGE"
           git push
