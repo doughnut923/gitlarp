@@ -258,3 +258,4 @@ build: add license compliance checker
 build: set up canary release pipeline
 fix: oops
 feat: added feet pics
+fix: typo
