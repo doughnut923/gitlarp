@@ -256,3 +256,5 @@ build: add build timestamp injection
 build: configure module federation for micro-frontend
 build: add license compliance checker
 build: set up canary release pipeline
+fix: oops
+feat: added feet pics
