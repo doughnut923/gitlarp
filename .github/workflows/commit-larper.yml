@@ -2,7 +2,7 @@ name: Commit Larper
 
 on:
   schedule:
-    - cron: '0 10,16,22 * * *'
+    - cron: '0 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -12,6 +12,16 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
+      - name: Random gate and delay
+        run: |
+          ROLL=$((RANDOM % 100))
+          if [ "$ROLL" -gt 25 ]; then
+            echo "Skipping (roll=$ROLL)"
+            exit 0
+          fi
+          SLEEP=$((RANDOM % 3300))
+          echo "Sleeping ${SLEEP}s then committing (roll=$ROLL)"
+          sleep "$SLEEP"
       - name: Make a fake commit
         run: |
           echo "$(date -u)" >> activity.log
