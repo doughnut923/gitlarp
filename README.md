@@ -1,7 +1,7 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/doughnut923/gitlarp/main/.github/brand/hero-dark.svg">
-    <img alt="gitlarp" src="https://raw.githubusercontent.com/doughnut923/gitlarp/main/.github/brand/hero-light.svg" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/doughnut923/gitlarp/main/.github/brand/logo-dark.svg">
+    <img alt="gitlarp" src="https://raw.githubusercontent.com/doughnut923/gitlarp/main/.github/brand/logo-light.svg" width="600">
   </picture>
 </p>
 
