@@ -26,6 +26,7 @@ jobs:
         run: |
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
-          MESSAGE="$(shuf -n 1 commit-messages.txt)"
-          git commit --allow-empty -m "$MESSAGE"
+          echo "$(date -u)" > activity.log
+          git add .
+          git commit -m "$(shuf -n 1 commit-messages.txt)"
           git push
